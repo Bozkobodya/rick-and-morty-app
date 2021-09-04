@@ -5,7 +5,7 @@ const CharacterList = ({data}) => {
     return(
         <div>
             {data.map(res => {
-                <Character src={res.image} name={res.name}/>
+               return <Character key={res.id} src={res.image} name={res.name} species={res.species} status={res.status} gender={res.gender}/>
             })}
         </div>
     )

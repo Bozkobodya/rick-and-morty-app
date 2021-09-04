@@ -11,15 +11,14 @@ function App() {
   let url = 'https://rickandmortyapi.com/api/character'
 
   function sendRequest(url){
-    return fetch(url).then(response => response.json())
+    return fetch(url).then(response => response.json()).then(res =>  {
+      //setInfo(res.info)
+      setData(data = res.results)})
   }
 
   function getRequestByPage(page = 1){
     let urlByPage = `${url}/?page=${page}`
-    sendRequest(urlByPage).then(res =>  {
-      //setInfo(res.info)
-      setData(res.result)
-    })
+    sendRequest(urlByPage)
   }
   getRequestByPage()
 
