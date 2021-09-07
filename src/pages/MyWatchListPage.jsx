@@ -37,13 +37,7 @@ const MyWatchListPage = () => {
         }
         localStorage.setItem(localId, JSON.stringify(obj))
         })
-        // setTimeout(() => {
-        //     let obj = {
-        //         check: 'unchecked',
-        //         id: localId
-        //     }
-        //     localStorage.setItem(localId, JSON.stringify(obj))
-        // }, 1000)
+       
     }
 
     useEffect(() => {

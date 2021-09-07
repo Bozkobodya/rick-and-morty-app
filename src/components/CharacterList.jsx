@@ -25,8 +25,8 @@ const CharacterList = ({data}) => {
         setModalLocation(location)
     }
 
-    // const consol = (info) => console.log(info)/////<button onClick={() => setModalActive(true)}>open modal</button>
-// onClick={() => setModalActive(true)}
+  
+
     return(
         <div>
             

@@ -4,22 +4,6 @@ import '../App.css';
 
 const MyWatchListPage = ({check, episode, name, air_date, id}) => {
 
-    // let [episode, setEpisode] = useState('')
-    // let [name, setName] = useState('')
-    // let [air_date, setAir_date] = useState('')
-
-    // function getEpisodeById(id){
-    //     const response = axios.get(`https://rickandmortyapi.com/api/episode/${id}`)
-    //     response.then(res =>  {
-    //       setEpisode(episode = res.data.episode)
-    //       setName(name = res.data.name)
-    //       setAir_date(air_date = res.data.air_date)
-    //     })
-    // }
-
-    // useEffect(() => {
-    //     getEpisodeById(id)
-    // },[])
 
     return(
         <div>
