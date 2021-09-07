@@ -9,15 +9,13 @@ const Character = ({src, name, species, status, gender})=> {
                 <img className="char__img" src={src} alt={`${name}'s photo`}/>
                 <div className='char__info'>
                     <div className="char__name">{name}</div>
-                    <div className="char__species">Species:{species}</div>
-                    <div className="char__status">Status:{status}</div>
-                    <div className="char__gender">Gender:{gender}</div>
+                    <div className="char__species otherinfo">Species: <span className="orangetext">{species}</span></div>
+                    <div className="char__status otherinfo">Status: <span className="orangetext">{status}</span></div>
+                    <div className="char__gender otherinfo">Gender: <span className="orangetext">{gender}</span></div>
                 </div>
             </div>
         </div>
     )
 }
-// //"species": "Humanoid",
-// "type": "Rick's Toxic Side",
-// "gender": "Male",
+
 export default Character

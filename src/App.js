@@ -1,43 +1,36 @@
+import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom';
 import './App.css';
-import CharacterList from './components/CharacterList';
-import Character from './components/Character'
-import {useState} from 'react'
+import CharacterPage from './pages/CharacterPage';
+import EpisodePage from './pages/EpisodePage';
+import LocationsPage from './pages/LocationsPage';
+import MyWatchListPage from './pages/MyWatchListPage';
 
 function App() {
-
-  let [info, setInfo] = useState([])
-  let [data, setData] = useState([])
-
-  let url = 'https://rickandmortyapi.com/api/character'
-
-  function sendRequest(url){
-    return fetch(url).then(response => response.json()).then(res =>  {
-      //setInfo(res.info)
-      setData(data = res.results)})
-  }
-
-  function getRequestByPage(page = 1){
-    let urlByPage = `${url}/?page=${page}`
-    sendRequest(urlByPage)
-  }
-  getRequestByPage()
-
-  
-
-  return (
-    <div className="App">
-      <CharacterList data={data}/>
-    </div>
-  );
+  return(
+    <BrowserRouter>
+      <div className="navbar">
+        <Link className="nav__link" to="/character">Characters</Link>
+        <Link className="nav__link" to="/episode">Episodes</Link>
+        <Link className="nav__link" to="/location">Locations</Link>
+        <Link className="nav__link" to="/mywatchlist">My watch list</Link>
+      </div>
+      <Switch>
+        <Route path="/character">
+          <CharacterPage/>
+        </Route>
+        <Route path="/episode">
+          <EpisodePage/>
+        </Route>
+        <Route path="/location">
+          <LocationsPage/>
+        </Route>
+        <Route path="/mywatchlist">
+          <MyWatchListPage/>
+        </Route>
+        <Redirect to="/characterpage"/>
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App;
-
-/*
-{fetch('https://rickandmortyapi.com/api/character')
-       .then((response) => {
-       return response.json();
-             })
-  .then((data) => {
-    console.log(data);
-  })} */
